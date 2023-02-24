@@ -1,4 +1,4 @@
-package com.moraisrwagner.currencyconversionservice.controller.bean;
+package com.moraisrwagner.currencyconversionservice.bean;
 
 
 import lombok.AllArgsConstructor;
