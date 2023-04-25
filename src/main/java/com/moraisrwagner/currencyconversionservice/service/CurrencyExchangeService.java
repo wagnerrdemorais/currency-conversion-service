@@ -14,13 +14,14 @@ import java.util.HashMap;
 public class CurrencyExchangeService {
 
     private final CurrencyExchangeProxy currencyExchangeProxy;
+    private final RestTemplate restTemplate;
 
     public CurrencyConversion getCurrencyConversionExchange(String from, String to, BigDecimal quantity) {
         var uriVariables = new HashMap<String, String>();
         uriVariables.put("from", from);
         uriVariables.put("to", to);
 
-        var responseEntity = new RestTemplate().getForEntity(
+        var responseEntity = restTemplate.getForEntity(
                 "http://localhost:8000/currency-exchange/from/{from}/to/{to}",
                 CurrencyConversion.class,
                 uriVariables);
