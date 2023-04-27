@@ -22,7 +22,7 @@ public class CurrencyExchangeService {
         uriVariables.put("to", to);
 
         var responseEntity = restTemplate.getForEntity(
-                "http://localhost:8000/currency-exchange/from/{from}/to/{to}",
+                "http://currency-exchange:8000/currency-exchange/from/{from}/to/{to}",
                 CurrencyConversion.class,
                 uriVariables);
 
